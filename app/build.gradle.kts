@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.aman.quizappcompose"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.aman.quizappcompose"
         minSdk = 27
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
