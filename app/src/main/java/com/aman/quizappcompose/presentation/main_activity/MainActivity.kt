@@ -17,6 +17,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.aman.quizappcompose.R
 import com.aman.quizappcompose.presentation.home.HomeScreen
 import com.aman.quizappcompose.presentation.home.HomeScreenViewModel
+import com.aman.quizappcompose.presentation.nav_graph.SetNavGraph
 import com.aman.quizappcompose.ui.theme.QuizAppComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -35,12 +36,7 @@ class MainActivity : ComponentActivity() {
                         .background(color = colorResource(id = R.color.mid_night_blue)),
                     contentAlignment = Alignment.Center
                 ){
-                    val viewModel : HomeScreenViewModel = hiltViewModel()
-                    val state by viewModel.homeState.collectAsState()
-                    HomeScreen(
-                        state = state,
-                        event = viewModel::onEvent
-                    )
+                    SetNavGraph()
                 }
             }
         }

@@ -8,12 +8,8 @@ const val ARG_KEY_QUIZ_TYPE = "ak_quiz_type"
 
 sealed class Routes(val route : String){
     object HomeScreen : Routes("home_screen")
-    object QuizScreen : Routes("quiz_screen" +
-            "/{$ARG_KEY_QUIZ_NUMBER}" +
-            "/{$ARG_KEY_QUIZ_CATEGORY}" +
-            "/{$ARG_KEY_QUIZ_DIFFICULTY}" +
-            "/{$ARG_KEY_QUIZ_TYPE}"
-    ){
+    object QuizScreen : Routes("quiz_screen/{$ARG_KEY_QUIZ_NUMBER}/{$ARG_KEY_QUIZ_CATEGORY}/{$ARG_KEY_QUIZ_DIFFICULTY}/{$ARG_KEY_QUIZ_TYPE}"){
+
         fun passQuizParams(
             numOfQuizzes : Int,
             quizCategory : String,

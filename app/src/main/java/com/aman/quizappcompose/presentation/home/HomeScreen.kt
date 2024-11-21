@@ -10,9 +10,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.aman.quizappcompose.presentation.common.AppDropDownMenu
 import com.aman.quizappcompose.presentation.common.ButtonBox
 import com.aman.quizappcompose.presentation.home.component.HomeHeader
+import com.aman.quizappcompose.presentation.nav_graph.Routes
 import com.aman.quizappcompose.presentation.utils.Constants
 import com.aman.quizappcompose.presentation.utils.Constants.difficulty
 import com.aman.quizappcompose.presentation.utils.Dimens.MediumPadding
@@ -23,7 +25,8 @@ import com.aman.quizappcompose.presentation.utils.Dimens.SmallSpacerHeight
 @Composable
 fun HomeScreen(
     state: StateHomeScreen,
-    event: (EventHomeScreen) -> Unit
+    event: (EventHomeScreen) -> Unit,
+    navController: NavController
 ){
     Column(
         modifier = Modifier
@@ -67,7 +70,9 @@ fun HomeScreen(
 
         Spacer (modifier = Modifier.height(MediumSpacerHeight))
         ButtonBox(text = "Generate Quiz", padding = MediumPadding){
-            Log.e("quiz detail", "HomeScreen: ${state.numberOfQuiz} ${state.category} ${state.difficulty} ${state.type}")
+            navController.navigate(
+                route = Routes.QuizScreen.passQuizParams(state.numberOfQuiz,state.category,state.difficulty,state.type)
+            )
         }
     }
 }
