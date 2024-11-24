@@ -60,8 +60,9 @@ fun QuizScreen(
         
         Column(
             modifier = Modifier
-                .padding(Dimens.SmallPadding)
                 .fillMaxSize()
+                .padding(Dimens.SmallPadding)
+
         ){
             Spacer(modifier = Modifier.height(LargeSpacerHeight))
             Row(
