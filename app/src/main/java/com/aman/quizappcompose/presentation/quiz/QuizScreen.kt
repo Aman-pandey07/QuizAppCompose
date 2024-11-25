@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import com.aman.quizappcompose.R
 import com.aman.quizappcompose.presentation.common.QuizAppBar
+import com.aman.quizappcompose.presentation.quiz.component.QuizInterface
 import com.aman.quizappcompose.presentation.utils.Constants
 import com.aman.quizappcompose.presentation.utils.Dimens
 import com.aman.quizappcompose.presentation.utils.Dimens.LargeSpacerHeight
@@ -91,6 +92,8 @@ fun QuizScreen(
             )
 
             Spacer(modifier = Modifier.height(LargeSpacerHeight))
+
+            QuizInterface(modifier = Modifier.weight(1f), onOptionSelected = {}, qNumber = 1)
 
         }
     }
